@@ -23,7 +23,11 @@ async function bootstrap() {
 
   app.enableCors();
 
-  await app.listen(process.env.PORT ?? 4000);
+  const port = process.env.PORT ?? 4000;
+  await app.listen(port); 
+
+  console.log(`🚀 Aplicação rodando em: http://localhost:${port}`);
+  console.log(`📄 Swagger rodando em: http://localhost:${port}/swagger`);
 
 }
 
